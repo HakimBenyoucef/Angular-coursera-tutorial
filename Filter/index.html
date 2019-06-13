@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html ng-app="myFirstApp">
+  <head>
+    <meta charset="utf-8">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <title>Hello Angular</title>
+  </head>
+  <body>
+    <div ng-controller="MyFilterController">
+      Original: {{original}} <br>
+      Updated: {{phrase}} <br>
+      Truth: {{phrase | truth: "Angular" : "React-Native"}}<br>
+      BIG-TRUTH: {{phrase | truth: "Angular" : "Udacity Cloud Nanodegree" | uppercase}}
+      <br>
+      <button ng-click="sayBen()" >Change Name</button>
+    </div>
+    
+  </body>
+</html>
