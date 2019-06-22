@@ -28,6 +28,12 @@
       <input type="text" ng-model="newItemName" placeholder="New item name">
       <input type="text" ng-model="newItemQuantity"placeholder="New item quantity">
       <button ng-click="addItem()">Add item</button>
+      <h3>Filtered ng-repeat:</h3>
+      <input type="text" ng-model="search" placeholder="search for a word in shoppingList1">
+      <ul>
+          <li ng-repeat="item in shoppingList1 | filter: search">{{ item }}
+          </li>
+        </ul>
     </div>
   </body>
 </html>
