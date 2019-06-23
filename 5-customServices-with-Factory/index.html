@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="customServiceFactoryApp">
+  <head>
+    <meta charset="utf-8" />
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <title>Ng-Repeat Angular</title>
+  </head>
+  <body>
+    <h3>Custom Services with Factory</h3>
+    <div ng-controller="ShoppingList1Controller as list1">
+      <input placeholder="Name" ng-model="list1.name" />
+      <input placeholder="Quantity" ng-model="list1.quantity" />
+      <button ng-click="list1.addItem()">Add Item</button>
+      <ol>
+          <li ng-repeat="item in list1.items">
+            {{item.quantity}} of {{item.name}}
+  
+          <button ng-click="list1.removeItem($index)">Delete</button>
+          </li>
+        </ol>
+        Error: {{list1.error}}
+    </div>
+    <div ng-controller="ShoppingList2Controller as list2">
+        <input placeholder="Name" ng-model="list2.name" />
+        <input placeholder="Quantity" ng-model="list2.quantity" />
+        <button ng-click="list2.addItem()">Add Item</button>
+        <ol>
+            <li ng-repeat="item in list2.items">
+              {{item.quantity}} of {{item.name}}
+    
+            <button ng-click="list2.removeItem($index)">Delete</button>
+            </li>
+          </ol>
+
+        Error: {{list2.error}}
+      </div>
+  </body>
+</html>
