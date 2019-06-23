@@ -4,27 +4,13 @@
   var toBuyMessage = "Everything is bought!";
   var boughtMessage = "Nothing bought yet.";
   var initialList = [
-    {
-      name: "Onion",
-      quantity: "5"
-    },
-    {
-      name: "Milk",
-      quantity: "3"
-    },
-    {
-      name: "Potatos",
-      quantity: "10"
-    },
-    {
-      name: "Fish",
-      quantity: "6"
-    },
-    {
-      name: "Donuts",
-      quantity: "2"
-    }
+    { name: "Onion", quantity: "5"},
+    { name: "Milk", quantity: "3"},
+    { name: "Potatos", quantity: "10"},
+    { name: "Fish", quantity: "6"},
+    { name: "Donuts", quantity: "2"}
   ];
+  
   angular
     .module("module2App", [])
     .controller("ToBuyController", ToBuyController)
@@ -61,8 +47,6 @@
     let toBuyItems = initialList;
     let boughtItems = [];
 
-    let message = boughtMessage;
-
     service.addToBought = function(name, quantity) {
       let item = {
         name: name,
@@ -82,14 +66,6 @@
 
     service.getBoughtItems = function() {
       return boughtItems;
-    };
-
-    service.getMessage = function() {
-      return message;
-    };
-
-    service.clearMessage = function() {
-      message = "";
     };
   }
 })();
