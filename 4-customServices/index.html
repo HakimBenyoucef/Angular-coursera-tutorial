@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="customServiceApp">
+  <head>
+    <meta charset="utf-8" />
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <title>Ng-Repeat Angular</title>
+  </head>
+  <body>
+    <h3>Custom Services</h3>
+    <div ng-controller="ShoppingListAddController as addItemCtlr">
+      <input placeholder="Name" ng-model="addItemCtlr.name" />
+      <input placeholder="Quantity" ng-model="addItemCtlr.quantity" />
+      <button ng-click="addItemCtlr.addItem()">Add Item</button>
+    </div>
+    <div ng-controller="ShoppingListShowController as showItemsCtrl">
+      <ol>
+        <li ng-repeat="item in showItemsCtrl.items">
+          {{item.quantity}} of {{item.name}}
+
+        <button ng-click="showItemsCtrl.removeItem($index)">Delete</button>
+        </li>
+      </ol>
+    </div>
+  </body>
+</html>
