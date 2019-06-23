@@ -43,26 +43,20 @@
       if (toBuyCtrl.items.length === 0) {
         toBuyCtrl.message = toBuyMessage;
       }
-
-      if (ShoppingListCheckOffService.getBoughtItems().length > 0) {
-          ShoppingListCheckOffService.clearMessage();
-      }
     };
   }
 
-  AlreadyBoughtController.$inject = ["$rootScope", "ShoppingListCheckOffService"];
-  function AlreadyBoughtController($rootScope, ShoppingListCheckOffService) {
+  AlreadyBoughtController.$inject = ["ShoppingListCheckOffService"];
+  function AlreadyBoughtController(ShoppingListCheckOffService) {
     var boughtCtrl = this;
 
     boughtCtrl.items2 = ShoppingListCheckOffService.getBoughtItems();
+    
     boughtCtrl.messageBought = boughtMessage;
-
-    $rootScope.$on("event", function(){
-      boughtCtrl.messageBought = ShoppingListCheckOffService.getMessage();
-    }) 
+    
+    
   }
-  ShoppingListCheckOffService.$inject = ["$rootScope"];
-  function ShoppingListCheckOffService($rootScope) {
+  function ShoppingListCheckOffService() {
     let service = this;
     let toBuyItems = initialList;
     let boughtItems = [];
@@ -96,7 +90,6 @@
 
     service.clearMessage = function() {
       message = "";
-      $rootScope.$emit("event");
     };
   }
 })();
