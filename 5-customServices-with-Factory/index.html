@@ -19,7 +19,7 @@
           <button ng-click="list1.removeItem($index)">Delete</button>
           </li>
         </ol>
-        Error: {{list1.error}}
+        <div ng-hide="!list1.error">Error: {{list1.error}}</div>
     </div>
     <div ng-controller="ShoppingList2Controller as list2">
         <input placeholder="Name" ng-model="list2.name" />
@@ -33,7 +33,6 @@
             </li>
           </ol>
 
-        Error: {{list2.error}}
-      </div>
-  </body>
+        <div ng-hide="!list2.error">Error: {{list2.error}}</div>
+      </div>  </body>
 </html>
