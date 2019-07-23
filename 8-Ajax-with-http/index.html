@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="MenuCategoriesApp">
+  <head>
+    <title>Shopping List Check Off</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles/bootstrap.min.css" />
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+  
+  </head>
+  <body>
+      <h1>Using $http Service</h1>
+      
+      <div ng-controller="MenuCategoriesController as menuCtrl">
+          <h3>List of Menu Categories
+          <ul>
+            <li ng-repeat="category in menuCtrl.categories">
+              (<a href="" ng-click="menuCtrl.logMenuItems(category.short_name);">{{ category.short_name }}</a>) {{ category.name }}
+            </li>
+          </ul>
+        </div>
+  </body>
+</html>
