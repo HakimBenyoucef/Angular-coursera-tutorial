@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="ShoppingListDirectiveApp">
+  <head>
+    <meta charset="utf-8" />
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="styles/bootstrap.min.css" />
+    <title>Template Expanding Directive</title>
+  </head>
+  <body>
+    <div ng-controller="ShoppingListController1 as list">
+        <h3>Shopping List 1:</h3>
+        <input placeholder="name" type="text" ng-model="list.itemName">
+        <input placeholder="quantity" type="text" ng-model="list.itemQuantity">
+        <button ng-click="list.addItem();">Add Item</button>
+        <ol>
+          <list-item ng-repeat="item in list.items"></list-item>
+        </ol>
+        <div ng-if="list.errorMessage" class="error">Error:
+          {{list.errorMessage}} </div>
+    </div>
+    <div ng-controller="ShoppingListController2 as list">
+        <h3>Shopping List 2:</h3>
+        <input placeholder="name" type="text" ng-model="list.itemName">
+        <input placeholder="quantity" type="text" ng-model="list.itemQuantity">
+        <button ng-click="list.addItem();">Add Item</button>
+        <ol>
+            <list-item ng-repeat="item in list.items"></list-item>
+        </ol>
+        <div ng-if="list.errorMessage" class="error">Error:
+          {{list.errorMessage}} </div>
+    </div>
+  </body>
+</html>
